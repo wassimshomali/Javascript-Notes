@@ -1,26 +1,48 @@
-//javascript goes here
+//javascript
+//this is how make an entry in the console
+//this is useful to announce values, behavior of variables
+//or just visualize what the code is doing
+
 console.log("Hello, World!")
+//could also use 
+//alert("Hello World!")
+//but this notification gets annoying so lets stick to console.log()
 
-// 3 ways to declare variables
-// var banana
-// let strawberry
-// const kiwi = 10
 
-//exercises
+// 3 ways to declare variables, var, let, const
+// var banana       - outdated format (function scoped or global scoped but has no block scope)
+// let strawberry   - use for variables
+// const kiwi = 10  - use for constants
+
+//exercises: simple match problems
 console.log((23+97))
 console.log((4+6+9)/77)
+
+//declaring a variable
 let a = 10
 console.log(a)
 console.log(a*9)
 let b = 7 * a
 console.log(b)
 
+//looking at certain functions, more math with a constant
 const max = 57
 let actual = max - 13
 let percentage = actual / max
 console.log(percentage)
 
+
+//how to check the type of dataset
 console.log(typeof actual)
+//there are 8 types of datasets
+// Number
+// BigInt
+// Boolean
+// String
+// null
+// undefined
+// Symbol
+// Object
 
 let mynumber = '74'
 Number(mynumber) + 3
@@ -55,7 +77,7 @@ console.log(one !== two); //true. Types are different OR values are different
 console.log(one !== two_string); //true. Types are different OR values are different
 
 
-console.log("                    ")
+console.log("")
 
 
 
