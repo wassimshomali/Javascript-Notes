@@ -10,9 +10,9 @@ console.log("Hello, World!")
 
 
 // 3 ways to declare variables, var, let, const
-// var banana       - outdated format (function scoped or global scoped but has no block scope)
-// let strawberry   - use for variables
-// const kiwi = 10  - use for constants
+// var banana       - outdated format (function scoped or global scoped but has no block scope) {can be used outside of this}
+// let strawberry   - use for variables (has block scope) let x = 10 , {let x = 9, x=9} x=10 (and not 9)
+// const kiwi = 10  - use for constants (must be assigned, can't be reassigned. defines a constant reference to the value)
 
 //exercises: simple match problems
 console.log((23+97))
@@ -43,7 +43,9 @@ console.log(typeof actual)
 // undefined
 // Symbol
 // Object
-
+let xyz;           // Now x is undefined
+xyz = 5;           // Now x is a Number
+xyz = "John";      // Now x is a String
 let mynumber = '74'
 Number(mynumber) + 3
 console.log(mynumber) 
@@ -53,7 +55,10 @@ console.log(typeof myNumber)
 let val = (mynumber)
 console.log(typeof val)
 
-//inc decrement operators
+console.log("")
+
+
+//inc decrement operators, can be used before or after a variable
 let num1 = 4
 num1++
 console.log(num1)
@@ -62,12 +67,30 @@ let num2 = 6
 console.log("number 2 is " + num2--)
 console.log(num2)
 
+
+
+//seeing how assignment operators work when used on strings and numbers and a combination of both
 var one = 1;
 var one_again = 1;
 var one_string = "1";  // note: this is a string
 var two = 2;  
 var two_string = "2";  //note: this is a string
 
+let x = 5 + 5;          //10
+let y = "5" + 5;        //55
+let z = "Hello" + 5;    //Hello5
+
+console.log("")
+
+//== is equal to ; === is equal to value and type of valriable
+console.log(one == one_again);  // true
+console.log(one == one_string); // true
+console.log(one === one_again); // true. Types are same
+console.log(one === one_string);// false. Types are different
+console.log(one === two); //false. Types are different OR values are different
+console.log(one === two_string); //false. Types are different OR values are different
+
+console.log("")
 
 console.log(one != one_again);  // false
 console.log(one != one_string); // false
@@ -76,9 +99,18 @@ console.log(one !== one_string);// true. Types are different
 console.log(one !== two); //true. Types are different OR values are different
 console.log(one !== two_string); //true. Types are different OR values are different
 
-
 console.log("")
 
+//using assignment operator with integrated arithmetic
+let text1 = "What a very ";
+text1 += "nice day";
+console.log(text1)
+
+let x2 = 3
+x2 += 1
+console.log(x2)
+
+console.log("")
 
 
 let testval = true
@@ -89,8 +121,9 @@ console.log(+testval)
 //another example
 let apples = "2";
 let oranges = "3";
-
-console.log( +apples + -oranges ); // "23", the binary plus concatenates strings
+console.log( apples + oranges ); // "23", the binary plus concatenates strings
+console.log( +apples + +oranges ); // 5, reads the variables as numbers because of the "+" in front
+console.log( +apples + -oranges ); // -1, can also use "-" as implied in the example above
 
 
 // 4 variables: first name, last name, current year, and birth year.
@@ -144,7 +177,43 @@ console.log(result)
 
 //A double NOT !! is sometimes used for converting a value to boolean type:
 
+//arrays
+let car = ["audi","bmw","honda"]
+console.log(car[0]) //returns "audi"
+car.push("lexus")   //adds a new string to array at end
+console.log(car[3]) //returns "lexus"
 
+//objects
+const person = {firstThing:"John", secondThing:"Banana", thirdThing:"20"}
+console.log(person.secondThing) //returns Banana
 
+//FUNCTIONS
+//namefollowedby()
+function name(parameter1, parameter2, parameter3) {
+    //code edxecuted here
+}
 
+// creating a fn that can be handled as an object
+/*
+let newObject = new Math(); //Math is a standard java fn, now a object
 
+//now lets use the Random() fn to randomize this object
+newObject.Random()
+
+let msg = "You lose m8"
+
+let winningNo = 19384
+  if (winningNo = newObject) {
+      msg = "you win m8"
+    }
+
+console.log(msg)
+
+function getRandom() {
+  return Math.random();
+}
+*/
+function getRandom() {
+    return Math.random() * (10 - 5) + 5;
+  }
+  console.log(getRandom())
