@@ -180,12 +180,21 @@ console.log(result)
 //arrays
 let car = ["audi","bmw","honda"]
 console.log(car[0]) //returns "audi"
-car.push("lexus")   //adds a new string to array at end
+car.push("lexus")   //adds a new string to array at end | you could also use car.pop to remove last element
 console.log(car[3]) //returns "lexus"
 
 //objects
 const person = {firstThing:"John", secondThing:"Banana", thirdThing:"20"}
-console.log(person.secondThing) //returns Banana
+const human = {
+    hair: "black",
+    eyes: "brown",
+    height: 6,
+    combination: function() {
+        return human.hair + " " + this.eyes //human.hair or this.hair, format is object.property to return property value
+    }
+}
+console.log(person.secondThing) //returns Banana, could also do person["secondThing"]
+console.log(human.combination()) //returns 6
 
 //FUNCTIONS
 //namefollowedby()
@@ -239,6 +248,7 @@ console.log(toCelsius(30))      //1.1111111111111112
 console.log(toCelsius(60))      //15.555555555555557
 
 //rouding numbers
+min1 = 1; max1 = 2
 min1 = Math.ceil(min1)//rounds up the min val
 max1 = Math.floor(max1)//rounds down the max val
 
@@ -288,13 +298,73 @@ console.log(msg)
 
 
 */
+//SWITCH, this example about selecting the current weekday
+// Set the current day of the week to a variable, with 0 being Sunday and 6 being Saturday
+let todayDate = new Date().getDay()
+const day = todayDate;
+
+switch (day) {
+    case 0:
+        console.log("It's Sunday, time to relax!");
+        break;
+    case 1:
+        console.log("Happy Monday!");
+        break;
+    case 2:
+        console.log("It's Tuesday. You got this!");
+        break;
+    case 3:
+        console.log("Hump day already!");
+        break;
+    case 4:
+        console.log("Just one more day 'til the weekend!");
+        break;
+    case 5:
+        console.log("Happy Friday!");
+        break;
+    case 6:
+        console.log("Have a wonderful Saturday!");
+        break;
+    default:
+        console.log("Something went horribly wrong...");
+}
+
+
+//html events
+
+//<element event="some JavaScript">
+
+//here's and example where clicking a button will add the date in the "demo" <p>
+
+/*<html>
+<body>
+<button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
+<p id="demo"></p> //this is where the date gets entered
 
 
 
+</body>
+</html>
+*/
 
+//document.getElementById("").innerHTML
+//document.this.innerHTML
 
+//you could also call a function that's nested in the <script> of that html
+//<button onclick="displayDate()">The time is?</button>
+//<script>
+//  function displayDate() {
+//    document.getElementById("demo").innerHTML = Date();
+//}
 
-
+/* a list of common hTML events
+onchange	An HTML element has been changed
+onclick	    The user clicks an HTML element
+onmouseover	The user moves the mouse over an HTML element
+onmouseout	The user moves the mouse away from an HTML element
+onkeydown	The user pushes a keyboard key
+onload	    The browser has finished loading the page
+*/
 
 
 
