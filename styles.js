@@ -194,26 +194,112 @@ function name(parameter1, parameter2, parameter3) {
 }
 
 // creating a fn that can be handled as an object
-/*
-let newObject = new Math(); //Math is a standard java fn, now a object
 
-//now lets use the Random() fn to randomize this object
-newObject.Random()
+//let newObject = new Math(); //Math is a standard java fn, now a object
+function newObject() {
+    //now lets use the Random() fn to randomize this object
+    return Math.random()
+}
 
 let msg = "You lose m8"
 
 let winningNo = 19384
-  if (winningNo = newObject) {
+  if (winningNo == newObject) {
       msg = "you win m8"
     }
 
 console.log(msg)
 
+/*
 function getRandom() {
   return Math.random();
 }
-*/
 function getRandom() {
     return Math.random() * (10 - 5) + 5;
   }
   console.log(getRandom())
+*/
+
+// function return
+let testfunction = myFunction(4, 2);   // Function is called, return value will end up in x
+
+function myFunction(a, b) {
+  return a * b;             // Function returns the product of a and b
+}
+
+console.log(testfunction)
+
+//another example where you can reuse the same function many times for different values and use cases
+
+//lets confert F• to C•
+function toCelsius(fahrenheit) {
+    return (5/9) * (fahrenheit-32);
+  }
+console.log(toCelsius(30))      //1.1111111111111112
+console.log(toCelsius(60))      //15.555555555555557
+
+//rouding numbers
+min1 = Math.ceil(min1)//rounds up the min val
+max1 = Math.floor(max1)//rounds down the max val
+
+
+/* example of a while loop for rng calc. random value in a range user selected. how many times the rng had to roll
+
+
+// creating a fn that can be handled as an object
+let rand = Math.random();
+//We create a function of randomInt that uses the Math class and the random function to generate an integer from min to max.
+function randomInt(min = 0, max = 0) {
+    min = Math.ceil(min); //Round up the minimum value
+    max = Math.floor(max); //Round down the maximum value
+    let rand = Math.random();
+
+  //The maximum is exclusive and the minimum is inclusive
+    let int = Math.floor(rand * (max - min) + min);
+
+  return int;
+}
+//Prompt the user to input the values. The value is stored
+let minimum = prompt("Enter a minimum value: ");
+let maximum = prompt("Enter a maximum value: ");
+
+let msg = "You lose m8";
+
+let answer = randomInt(minimum, maximum)
+let winningNo = 19384
+
+
+
+let count = 0
+let randomness = 0;
+//create a loop with 2 parts
+// first part loops the function that generates random numbesr
+while (randomness != winningNo) {
+  randomness = randomInt(minimum, maximum)
+  count++
+}
+
+
+// second part will do ++count on a coutn var to keep track of how many loops occur
+// loop ends when the randomInt = winningNo
+msg = "that shit took forever bro, uhm actually it took precisely this many tries: " + count
+console.log(msg)
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
