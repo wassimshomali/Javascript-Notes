@@ -366,10 +366,92 @@ onkeydown	The user pushes a keyboard key
 onload	    The browser has finished loading the page
 */
 
+//STRINGS
+let text = "this is a test"
+let lengthOfText = text.length //14
+
+console.log(lengthOfText)
+
+//use \ before any "" or '' or \ in a string to maintain structure
+
+let text2 = "Hello! my name is \" Wassim \""
+
+console.log(text2)
+
+//a few more
+/*
+Code	Result
+\b	Backspace
+\f	Form Feed
+\n	New Line
+\r	Carriage Return
+\t	Horizontal Tabulator
+\v	Vertical Tabulator
+*/
+
+
+console.log(text)
+
+/* the following DOM works when added in the HTML file in a <script> tag
+this is because it's calling "document."
+document.getElementById("demo").innerHTML = typeof text
+~string
+would be an object if text were declared as an object:
+let text = new String("this is a test")
+*/
+
+//object === object //returns always false
+//don't declare strings as objects, complicates thinga and slows down code
+
+//slice
+
+let newString = "Apple, Banana, Kiwi"
+let partOfString = str.slice(7,13) //Banana
+let lastPartOfString = str.slice(-4) //Kiwi
+
+console.log(lastPartOfString)//Kiwi
+
+/*
+slice(start, end)
+substring(start, end)
+substr(start, length)
+*/
+
+//replace
+/*
+  let text = "Please visit Microsoft and Microsoft!";
+  let newText = text.replace("Microsoft", "W3Schools");//replaces text but in a new declared string
 
 
 
+  let text = "Please visit Microsoft!";
+  let newText = text.replace("MICROSOFT", "W3Schools"); //this won't work because it's case sensitive. see next example
 
 
 
+  let text = "Please visit Microsoft!";
+  let newText = text.replace(/MICROSOFT/i, "W3Schools");//to replace case insensitive, use /.../i
 
+
+  let text = "Please visit Microsoft and Microsoft!";
+  let newText = text.replace(/Microsoft/g, "W3Schools");//to replace all global matches
+*/
+
+let upperText = text.toUpperCase
+//converts a string to uppercase
+//same for toLowerCase
+
+let concattedText = text1.concat(" adding that to this ", text2)
+console.log(concattedText)
+
+let stringWithSpace = "          Hello dudes           "
+let stringWithoutSpace = stringWithSpace.trim()
+
+let nonPadded = "5" //padding only works on strings
+let padded = nonPadded.padStart(4,0)
+console.log(padded) //0005
+
+
+let nonPadded2 = "5" //padding only works on strings
+let padded2 = nonPadded2.padEnd(5,1)
+console.log(padded2) //51111
