@@ -455,3 +455,39 @@ console.log(padded) //0005
 let nonPadded2 = "5" //padding only works on strings
 let padded2 = nonPadded2.padEnd(5,1)
 console.log(padded2) //51111
+
+
+//factorial function example
+
+
+function factorial(num) {
+
+  if (num < 0) return undefined
+  if (num == 0) return 1
+
+  let x = num - 1
+
+  while (x > 1) {
+    num *= x
+    x--
+  }
+  return num
+}
+
+
+
+
+
+
+console.log(factorial(3))
+
+
+//circumference of a circle function with given radius with a result that has 2 numbers after the decimal place
+
+function circumference(rad) {
+  if (rad < 0) return undefined
+  let circ = 2*Math.PI*rad
+  return circ.toFixed(2)
+}
+
+console.log(circumference(5))
