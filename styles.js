@@ -491,3 +491,121 @@ function circumference(rad) {
 }
 
 console.log(circumference(5))
+
+
+//random number function
+
+const rand = Math.random()
+console.log(rand)
+
+//function that joins an array into a string
+const myArray = ['I', 'love', 'chocolate', 'frogs'];
+const madeAString = myArray.join(' ');
+console.log(madeAString);
+
+
+
+//example function with return
+function aa() {
+  const y = 2
+  return (y)
+}
+console.log(aa()) //2
+
+//example function with output
+/*
+function ab() {
+  const y = 2
+  output(y)
+}
+console.log(ab()) //Uncaught ReferenceError: output is not defined
+*/
+
+
+
+//example of using functions with parameters and arguments
+//with strings
+function favoriteAnimal(animal) {
+  console.log(animal + " is my favorite animal!")
+}
+
+favoriteAnimal('Goat')
+//with math
+function multiplyBy10(num) {
+  console.log(num * 10)
+}
+
+multiplyBy10(10)
+
+
+//arrow functions
+let sum = (a, b) => a + b;
+
+/* This arrow function is a shorter form of:
+
+let sum = function(a, b) {
+  return a + b;
+};
+*/
+/*
+console.log( sum(1, 2) ); // 3
+
+let sum = (a, b) => {  // the curly brace opens a multiline function
+  let result = a + b;
+  return result; // if we use curly braces, then we need an explicit "return"
+};
+
+alert( sum(1, 2) ); // 3
+*/
+
+//exercises for function
+
+//fn that capitalizes a string's first letter. can accept strings with any case form
+function capitalize(txt) {
+  let firstLetter = txt.charAt(0)
+  let restOfString = txt.slice(1)
+  return firstLetter.toUpperCase() + restOfString.toLowerCase()
+}
+console.log(capitalize("teST"))
+
+
+//fn that returns last letter of the string
+function lastLetter(txt) {
+  let x = txt.length - 1
+  let last = txt.slice(x)
+  console.log(last)
+}
+lastLetter("banana") // ~ a
+
+
+//the FizzBuzz problem
+/*Write a program that takes a user’s input and prints the 
+numbers from one to the number the user entered. However,
+ for multiples of three print Fizz instead of the number and
+  for the multiples of five print Buzz. For numbers which are
+   multiples of both three and five print FizzBuzz.*/
+   console.log("This is FizzBuzz!!")
+//let num = parseInt(prompt("Please enter the number you would like to FizzBuzz up to: "));
+function FizzBuzz(num) {
+  if (num < 0) {
+    console.log("please enter a positive integer")
+  }
+  let x = 1
+  while (x <= num) {
+    if (x % 3 == 0 && x % 5 == 0) {
+      console.log("Fizz Buzz")
+    }
+    else if (x % 3 == 0) {
+      console.log("Fizz")
+    }
+    else if (x % 5 == 0) {
+      console.log("Buzz")
+    }    
+    else  {
+      console.log(x)
+    }    
+    x++
+  }
+}
+
+FizzBuzz(40)
